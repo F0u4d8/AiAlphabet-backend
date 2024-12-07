@@ -1,0 +1,28 @@
+djangoBackend/
+dashboard/
+models/
+
+
+# Python
+__pycache__/
+*.py[cod]
+*.sqlite3
+*.log
+
+# Virtual environments
+venv/
+env/
+
+# Django
+*.pyc
+*.pyo
+.env
+*.db
+
+# Static and media
+/staticfiles/
+/media/
+
+# IDE files
+.vscode/
+*.idea/
