@@ -1,0 +1,5 @@
+model_home: ./models
+models:
+  llama-3.2-3B:
+    name: Llama-3.2-3B-Instruct-Q6_K
+    path: 3B/Llama-3.2-3B-Instruct-Q6_K.gguf

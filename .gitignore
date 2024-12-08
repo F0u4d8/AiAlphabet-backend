@@ -1,8 +1,3 @@
-djangoBackend/
-dashboard/
-models/
-
-
 # Python
 __pycache__/
 *.py[cod]
@@ -12,17 +7,25 @@ __pycache__/
 # Virtual environments
 venv/
 env/
-
-# Django
+djangoBackend/
+dashboard/
+# Django-specific
 *.pyc
 *.pyo
 .env
 *.db
+db.sqlite3
 
-# Static and media
+# Migrations (Optional: Exclude them if you don't want to push migrations)
+*/migrations/
+
+# Static and media files
 /staticfiles/
 /media/
 
-# IDE files
+# IDE or editor-specific files
 .vscode/
-*.idea/
+.idea/
+
+# Logs and debug files
+*.log
