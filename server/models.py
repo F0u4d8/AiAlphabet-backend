@@ -42,3 +42,24 @@ class Content(models.Model):
     def __str__(self):
         return f"{self.title} ({self.category.name})"
     
+
+
+
+class Todo(models.Model):
+    PRIORITY_CHOICES = [
+        (0, 'عاجل'),      
+        (1, 'مهم'),      
+        (2, 'عادي'),     
+        (3, 'غير مهم'),    
+    ]
+
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='todos')
+    title = models.CharField(max_length=255)
+    description = models.TextField(blank=True, null=True)
+    priority = models.IntegerField(choices=PRIORITY_CHOICES, default=2)  
+    is_completed = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f"{self.title} (Priority: {dict(self.PRIORITY_CHOICES).get(self.priority)})"

@@ -75,3 +75,27 @@ Content-Type: application/json
 POST http://127.0.0.1:8000/api/admin/refresh
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsIno0LCJ
+
+
+
+
+###
+GET   http://127.0.0.1:8000/api/todo-lists
+Content-Type: application/json
+Authorization: token 2a4bd27c68808313f79c7dffdd42080ad476607f
+
+ { "title": "Buy groceries",
+    "description": "Milk, Bread, Cheese",
+    "priority": "2"}
+
+
+
+###
+PUT   http://127.0.0.1:8000/api/todo-list/1
+Authorization: token 2a4bd27c68808313f79c7dffdd42080ad476607f
+Content-Type: application/json
+
+ { "title": "Buy groceries",
+    "description": "Milk, Bread, Cheese",
+    "priority": "3"}
+

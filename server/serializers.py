@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
-from .models import UserProfile ,Category ,Content
+from .models import UserProfile ,Category ,Content,Todo
 
 
 class UserProfileSerializer(serializers.ModelSerializer):
@@ -53,3 +53,17 @@ class CategorySerializer(serializers.ModelSerializer):
     def get_contents(self, obj):
         contents = obj.contents.all()[:8]  # Limit to 8 images
         return LimitedContentSerializer(contents, many=True).data
+    
+    
+
+
+class TodoSerializer(serializers.ModelSerializer):
+    priority_display = serializers.SerializerMethodField()
+
+    class Meta:
+        model = Todo
+        fields = ['id', 'user', 'title', 'description', 'priority', 'priority_display', 'is_completed', 'created_at', 'updated_at']
+        read_only_fields = ['id', 'user', 'created_at', 'updated_at']
+
+    def get_priority_display(self, obj):
+        return dict(Todo.PRIORITY_CHOICES).get(obj.priority)    

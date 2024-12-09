@@ -10,7 +10,9 @@ re_path('api/avatars', views.predefined_avatars),
 re_path('api/categories', views.categoryListAll), 
  path('api/category/<int:category_id>/', views.contentListByCat, name='content-list-by-category'),
  path('api/content/<int:content_id>/', views.contentListById, name='content-list-by-id'),
- 
+ re_path('api/todo-lists', views.todo_list_create), 
+ path('api/todo-list/<int:todo_id>', views.todo_detail_update_delete, name='todo-list-by-id'),
+
  
  
 re_path('api/admin/login', views.admin_login),  
