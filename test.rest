@@ -39,7 +39,7 @@ Authorization: token 6b5dbe89bfd73d35f468faf9149e73f27725a888
 
 
 ###
-DELETE   http://127.0.0.1:8000/api/admin/category/3/
+GET   http://127.0.0.1:8000/api/admin/category/3/
 Authorization: token 2a4bd27c68808313f79c7dffdd42080ad476607f
 Content-Type: application/json
 
